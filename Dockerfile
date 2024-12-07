@@ -24,4 +24,4 @@ RUN if ! update-alternatives --query python > /dev/null 2>&1; then \
 
 USER root
 EXPOSE 7860
-CMD ["python", "/app/app.py"]
+CMD ["gradio", "/app/app.py"]

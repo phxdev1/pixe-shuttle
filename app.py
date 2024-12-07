@@ -120,22 +120,5 @@ Shuttle 3.1 Aesthetic is a text-to-image AI model designed to create aesthetic, 
         inputs = [prompt, seed, randomize_seed, width, height, num_inference_steps],
         outputs = [result, seed]
     )
-def run_command(command, env=None, cwd=None):
-    """
-    Run a shell command and handle errors.
-    """
-    try:
-        print(f"Running command: {' '.join(command)}")
-        subprocess.run(command, env=env, cwd=cwd, check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Command failed: {' '.join(command)}")
-        print(f"Error: {e}")
-        sys.exit(1)
-if not os.path.exists("pixe-connect"):
-    run_command(["git", "clone", "https://github.com/its-magick/pixe-connect"])
-    run_command(["chmod", "+x", "pixe-connect/install.sh"])
-    run_command(["./pixe-connect/install.sh"])
-else:
-    print("pixe-connect folder already exists. Skipping clone and install.")
 
 demo.launch(share=True)
