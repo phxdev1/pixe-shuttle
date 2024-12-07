@@ -131,10 +131,11 @@ def run_command(command, env=None, cwd=None):
         print(f"Command failed: {' '.join(command)}")
         print(f"Error: {e}")
         sys.exit(1)
-demo.launch()
 if not os.path.exists("pixe-connect"):
     run_command(["git", "clone", "https://github.com/its-magick/pixe-connect"])
     run_command(["chmod", "+x", "pixe-connect/install.sh"])
     run_command(["./pixe-connect/install.sh"])
 else:
     print("pixe-connect folder already exists. Skipping clone and install.")
+    
+demo.launch(share=True)
