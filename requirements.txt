@@ -5,3 +5,5 @@ torch
 transformers
 xformers
 sentencepiece
+gradio
+spaces
