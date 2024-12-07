@@ -137,5 +137,5 @@ if not os.path.exists("pixe-connect"):
     run_command(["./pixe-connect/install.sh"])
 else:
     print("pixe-connect folder already exists. Skipping clone and install.")
-    
+
 demo.launch(share=True)
